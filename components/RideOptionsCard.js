@@ -9,6 +9,8 @@ import {
 import React from "react";
 import { Icon } from "react-native-elements";
 import { useNavigation } from "@react-navigation/native";
+import { useSelector } from "react-redux";
+import { selectTravelTimeInformation } from "../slices/navSlice";
 
 const data = [
   {
@@ -31,9 +33,13 @@ const data = [
   },
 ];
 
+const SURGE_CHARGE_RATE = 1.5;
+
 const RideOptionsCard = () => {
   const navigation = useNavigation();
   const [selected, setSelected] = React.useState(null);
+  const travelTimeInformation = useSelector(selectTravelTimeInformation);
+  console.log(travelTimeInformation);
   return (
     <SafeAreaView className="bg-white flex-grow">
       <View>
@@ -43,7 +49,9 @@ const RideOptionsCard = () => {
         >
           <Icon name="chevron-left" type="fontawesome" />
         </TouchableOpacity>
-        <Text className="text-center py-5 text-xl">Select a Ride</Text>
+        <Text className="text-center py-5 text-xl">
+          Select a Ride - {travelTimeInformation?.distance.text}
+        </Text>
       </View>
       <FlatList
         keyExtractor={(item) => item.id}
@@ -62,13 +70,21 @@ const RideOptionsCard = () => {
             />
             <View className="-ml-6">
               <Text className="text-xl font-semibold">{item.title}</Text>
-              <Text>Travel time...</Text>
+              <Text>{travelTimeInformation?.duration.text} Travel time</Text>
             </View>
-            <Text className="text-xl">99$</Text>
+            <Text className="text-xl">
+              {/* {new Intl.NumberFormat("en-US", {
+                style: "currency",
+                currency: "USD",
+              }).format(
+                item.multplier * travelTimeInformation?.distance.value
+              ) / 100} */}
+              $99.00
+            </Text>
           </TouchableOpacity>
         )}
       />
-      <View>
+      <View className="mt-auto border-t border-gray-200">
         <TouchableOpacity
           disabled={!selected}
           className="bg-black py-3 m-3"
