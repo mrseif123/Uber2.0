@@ -1,18 +1,18 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, SafeAreaView } from "react-native";
 import React from "react";
-import { SafeArea } from "../components/safeArea";
 import NavOptions from "../components/NavOptions";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { GOOGLE_MAPS_API_KEY } from "@env";
 import { useNavigation } from "@react-navigation/native";
 import { useDispatch } from "react-redux";
 import { setDestination, setOrigin } from "../slices/navSlice";
+import NavFavourites from "../components/NavFavourites";
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
   const navigation = useNavigation();
   return (
-    <SafeArea className="bg-white h-full">
+    <SafeAreaView className="bg-white h-full">
       <View className="p-5">
         <Image
           style={{ width: 100, height: 100, resizeMode: "contain" }}
@@ -43,7 +43,8 @@ const HomeScreen = () => {
         }}
       />
       <NavOptions />
-    </SafeArea>
+      <NavFavourites />
+    </SafeAreaView>
   );
 };
 

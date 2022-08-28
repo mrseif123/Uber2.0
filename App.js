@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, KeyboardAvoidingView } from "react-native";
 import React from "react";
 import { Provider } from "react-redux";
 import { store } from "./store";
@@ -14,29 +14,35 @@ export default function App() {
   const Stack = createStackNavigator();
   return (
     <TailwindProvider>
-      <SafeAreaProvider>
-        <NavigationContainer>
-          <Provider store={store}>
-            <Stack.Navigator>
-              <Stack.Screen
-                name="HomeScreen"
-                component={HomeScreen}
-                options={{ headerShown: false }}
-              />
-              <Stack.Screen
-                name="MapScreen"
-                component={MapScreen}
-                options={{ headerShown: false }}
-              />
-              <Stack.Screen
-                name="EatScreen"
-                component={EatScreen}
-                options={{ headerShown: false }}
-              />
-            </Stack.Navigator>
-          </Provider>
-        </NavigationContainer>
-      </SafeAreaProvider>
+      <Provider store={store}>
+        <SafeAreaProvider>
+          <KeyboardAvoidingView
+            behaviour={Platform.OS === "ios" ? "padding" : "height"}
+            style={{ flex: 1 }}
+            keyboardVerticalOffset={Platform.OS === "ios" ? -64 : 0}
+          >
+            <NavigationContainer>
+              <Stack.Navigator>
+                <Stack.Screen
+                  name="HomeScreen"
+                  component={HomeScreen}
+                  options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                  name="MapScreen"
+                  component={MapScreen}
+                  options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                  name="EatScreen"
+                  component={EatScreen}
+                  options={{ headerShown: false }}
+                />
+              </Stack.Navigator>
+            </NavigationContainer>
+          </KeyboardAvoidingView>
+        </SafeAreaProvider>
+      </Provider>
     </TailwindProvider>
   );
 }
