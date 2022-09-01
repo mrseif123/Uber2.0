@@ -37,7 +37,7 @@ const NavigateCard = () => {
           onPress={(data, details = null) => {
             dispatch(
               setDestination({
-                latitude: details.geometry.location.lat,
+                location: details.geometry.location,
                 description: data.description,
               })
             );
