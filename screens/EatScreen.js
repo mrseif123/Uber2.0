@@ -4,7 +4,7 @@ import React from "react";
 const EatScreen = () => {
   return (
     <View>
-      <Text>EatScreen</Text>
+      <Text>EatScreen ETA unknown...</Text>
     </View>
   );
 };

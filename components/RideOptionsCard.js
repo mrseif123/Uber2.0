@@ -72,15 +72,7 @@ const RideOptionsCard = () => {
               <Text className="text-xl font-semibold">{item.title}</Text>
               <Text>{travelTimeInformation?.duration?.text} Travel time</Text>
             </View>
-            <Text className="text-xl">
-              {/* {new Intl.NumberFormat("en-US", {
-                style: "currency",
-                currency: "USD",
-              }).format(
-                item.multplier * travelTimeInformation?.distance.value
-              ) / 100} */}
-              $99.00
-            </Text>
+            <Text className="text-xl">{`$ ${50 * item.multplier}`}</Text>
           </TouchableOpacity>
         )}
       />

@@ -14,9 +14,9 @@ const MapScreen = () => {
     <SafeArea>
       <TouchableOpacity
         onPress={() => navigation.navigate("HomeScreen")}
-        className="absolute top-16 left-8 bg-gray-100 z-50 rounded-full shadow-lg"
+        className="absolute top-16 left-8 bg-transparent z-50 rounded-full shadow-lg "
       >
-        <Icon name="menu"></Icon>
+        <Icon name="home" color="grey"></Icon>
       </TouchableOpacity>
 
       <View className="h-1/2">
