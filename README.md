@@ -1,5 +1,5 @@
 <div align="center">
-      <img src="https://mashable.com/article/uber-font-new-logo" alt="Logo" style="width:80%;">
+      <img src="https://helios-i.mashable.com/imagery/articles/03y6VwlrZqnsuvnwR8CtGAL/hero-image.fill.size_1248x702.v1623372852.jpg" alt="Logo" style="width:80%;">
 </div>
 
 # Uber2.0 - a simple Uber clone-:
