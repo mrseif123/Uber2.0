@@ -29,3 +29,6 @@ Uber is an international transportation app that helps millions of people around
 <img width="348" alt="Screenshot 2022-09-02 at 2 04 43" src="https://user-images.githubusercontent.com/30297892/188026990-dfa4c4e9-2248-453a-b591-7d4b570e2343.png">
 </div>
 
+### Special Thanks:
+- [Sonny Sangha](https://www.youtube.com/c/SonnySangha) for his amazing tutorial.
+
